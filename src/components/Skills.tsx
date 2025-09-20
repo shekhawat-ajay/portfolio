@@ -16,10 +16,12 @@ const Skills = () => {
 
   return (
     <Container className="mt-10 max-w-3xl">
-      <h2 className="text-primary mb-5 text-xl font-bold md:text-2xl">
-        Skills
-        <div></div>
-      </h2>
+      <div className="mx-5">
+        <h2 className="text-primary mb-5 text-xl font-bold md:text-2xl">
+          Skills
+          <div></div>
+        </h2>
+      </div>
     </Container>
   );
 };
