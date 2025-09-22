@@ -15,14 +15,15 @@ const Header = () => {
   const navItems = [
     { title: "Contact", href: "/contact" },
     { title: "Blogs", href: "/blogs" },
+    // { title: "Labs", href: "/labs" },
   ];
 
   return (
-    <Container className="sticky max-w-4xl">
-      <div className="relative w-full px-2 pt-4 pb-4 sm:px-5">
+    <Container className="sticky max-w-3xl">
+      <div className="relative w-full px-3 pt-4 pb-4 sm:px-5">
         <div className="flex items-center justify-between">
-          <h2 className="text-muted-foreground tracking-tight">
-            Ajay Shekhawat
+          <h2 className="text-muted-foreground hover:text-primary tracking-tight">
+            <a href="/home">Ajay Shekhawat</a>
           </h2>
 
           <nav className="text-muted-foreground hidden items-center gap-4 text-sm sm:flex">
@@ -32,7 +33,7 @@ const Header = () => {
             </Button>
             <ul className="flex items-center gap-5">
               {navItems.map((navItem) => (
-                <li key={navItem.title}>
+                <li key={navItem.title} className="hover:text-primary">
                   <a href={navItem.href}>{navItem.title}</a>
                 </li>
               ))}
@@ -42,7 +43,7 @@ const Header = () => {
 
           <div className="flex items-center gap-2 sm:hidden">
             <ModeToggle />
-            <Menubar className="border-none ">
+            <Menubar className="border-none">
               <MenubarMenu>
                 <MenubarTrigger>
                   <Menu
@@ -60,6 +61,8 @@ const Header = () => {
                   <MenubarItem>Contact</MenubarItem>
                   <MenubarSeparator />
                   <MenubarItem>Blogs</MenubarItem>
+                  {/* <MenubarSeparator /> */}
+                  {/* <MenubarItem>Labs</MenubarItem> */}
                 </MenubarContent>
               </MenubarMenu>
             </Menubar>
