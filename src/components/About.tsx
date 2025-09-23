@@ -4,12 +4,19 @@ import { LocateFixed } from "lucide-react";
 
 const About = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const time = `${currentTime.getHours().toString().padStart(2, "0")}:${currentTime.getMinutes().toString().padStart(2, "0")}`;
+
+  const formatter = new Intl.DateTimeFormat("en-IN", {
+    timeZone: "Asia/Kolkata",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+  const time = formatter.format(currentTime);
 
     useEffect(() => {
       const timer = setInterval(() => {
         setCurrentTime(new Date());
-      }, 30000);
+      }, 10000);
 
       return () => clearInterval(timer);
     }, []);
@@ -17,14 +24,15 @@ const About = () => {
   return (
     <Container className="relative mt-5 max-w-3xl">
       <div className="px-3 pb-10 sm:px-5">
-        <div className="text-muted-foreground mb-5 flex justify-between items-center text-sm">
+        <div className="text-muted-foreground mb-5 flex items-center justify-between text-sm">
           <h3>IN {time}</h3>
-          <div className="flex gap-1 items-center">
-          <LocateFixed size={16} strokeWidth={1} />
-          <h3>New Delhi, India</h3>
+          <div className="flex items-center gap-1">
+            <LocateFixed size={16} strokeWidth={1} />
+            <h3>New Delhi, India</h3>
           </div>
         </div>
-        <div className="mb-8 mt-8 flex items-center gap-4">
+
+        <div className="mt-8 mb-8 flex items-center gap-4">
           <div>
             <img
               src="avatar.png"
@@ -64,7 +72,7 @@ const About = () => {
       </div>
 
       {/* Full-width horizontal line */}
-      <div className="pointer-events-none absolute bottom-0 left-1/2 h-px w-screen -translate-x-1/2 bg-gradient-to-r from-slate-100/15 via-transparent to-slate-200/15" />
+      <div className="pointer-events-none absolute bottom-0 left-1/2 h-px w-screen -translate-x-1/2 bg-gradient-to-r from-slate-300/10 via-transparent to-slate-300/10" />
     </Container>
   );
 };

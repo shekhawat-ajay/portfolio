@@ -16,11 +16,14 @@ const Header = () => {
     { title: "Contact", href: "/contact" },
     { title: "Blogs", href: "/blogs" },
     // { title: "Labs", href: "/labs" },
+    // { title: "Changelog", href: "/changelog" },
+    // { title: "Projects", href: "/projects" },
+    // { title: "Experience", href: "/experience" },
   ];
 
   return (
     <Container className="sticky max-w-3xl">
-      <div className="relative w-full px-3 pt-4 pb-4 sm:px-5">
+      <div className="relative px-3 pt-4 pb-4 sm:px-5">
         <div className="flex items-center justify-between">
           <h2 className="text-muted-foreground hover:text-primary tracking-tight">
             <a href="/home">Ajay Shekhawat</a>
@@ -70,7 +73,7 @@ const Header = () => {
         </div>
 
         {/* Full-width horizontal line */}
-        <div className="pointer-events-none absolute bottom-0 left-1/2 h-px w-screen -translate-x-1/2 bg-gradient-to-r from-slate-400/40 via-transparent to-slate-400/40" />
+        <div className="pointer-events-none absolute bottom-0 left-1/2 h-px w-screen -translate-x-1/2 bg-gradient-to-r from-slate-100/20 via-transparent to-slate-100/20" />
       </div>
     </Container>
   );

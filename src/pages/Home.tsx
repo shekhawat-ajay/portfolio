@@ -6,18 +6,18 @@ import Container from "@/components/Container";
 
 const Home = () => {
   return (
-    <Container className="bg-background min-h-screen max-w-full p-2 selection:bg-accent">
-      <div className="pointer-events-none absolute top-0 left-1/2 h-full w-full max-w-3xl -translate-x-1/2">
+    <Container className="bg-background selection:bg-accent relative min-h-screen max-w-full overflow-x-hidden p-2">
+      <div className="fixed inset-x-0 mx-auto max-w-3xl">
         {/* Left line */}
-        <div className="absolute top-0 left-0 h-full w-px bg-gradient-to-b from-slate-300/20 via-slate-400/30 to-transparent" />
+        <div className="absolute left-0 h-screen w-px bg-gradient-to-b from-slate-400/30 via-slate-500/30 to-transparent" />
         {/* Right line */}
-        <div className="absolute top-0 right-0 h-full w-px bg-gradient-to-b from-slate-300/20 via-slate-400/30 to-transparent" />
+        <div className="absolute right-0 h-screen w-px bg-gradient-to-b from-slate-400/10 via-slate-500/10 to-transparent" />
       </div>
 
       <Header />
       <About />
       <Skills />
-      {/* <Projects /> */}
+      <Projects />
     </Container>
   );
 };

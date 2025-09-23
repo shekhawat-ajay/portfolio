@@ -1,27 +1,151 @@
 import Container from "./Container";
+import { Button } from "./ui/button";
 
 const Skills = () => {
-  const skills = [
-    { name: "TypeScript", path: "/typescript.svg", width: "40" },
-    { name: "Python", path: "/python.svg", width: "40" },
-    { name: "React", path: "/reactjs.svg", width: "40" },
-    { name: "React Query", path: "/react-query.svg", width: "40" },
-    { name: "React Router", path: "/reactrouter.svg", width: "40" },
-    { name: "Node.js", path: "/nodejs.svg", width: "40" },
-    { name: "Framer Motion", path: "/framer-light.svg", width: "20" },
-    { name: "Tailwind CSS", path: "/tailwindcss.svg", width: "40" },
-    { name: "Express.js", path: "/expressjs-light.svg", width: "40" },
-    { name: "MongoDB", path: "/mongodb.svg", width: "40" },
+  const languages = [
+    { name: "TypeScript", path: "/typescript.svg" },
+    { name: "JavaScript", path: "/javascript.svg" },
+    { name: "Python", path: "/python.svg" },
+  ];
+
+  const libraries = [
+    { name: "React", path: "/reactjs.svg" },
+    { name: "React Query", path: "/react-query.svg" },
+    { name: "React Router", path: "/reactrouter.svg" },
+    { name: "Framer Motion", path: "/framer-motion.svg" },
+    { name: "Tailwind CSS", path: "/tailwindcss.svg" },
+    { name: "Express.js", path: "/expressjs.svg" },
+  ];
+
+  const runtime = [{ name: "Node.js", path: "/nodejs.svg" }];
+
+  const database = [{ name: "MongoDB", path: "/mongodb.svg" }];
+
+  const developerTools = [
+    { name: "Git", path: "/git.svg" },
+    { name: "GitHub", path: "/github.svg" },
+    { name: "VS Code", path: "/VScode.svg" },
+    { name: "Postman", path: "/Postman.svg" },
   ];
 
   return (
-    <Container className="mt-10 max-w-3xl">
-      <div className="mx-5">
-        <h2 className="text-primary font-doto mb-5 text-xl font-bold md:text-2xl">
+    <Container className="relative mt-8 max-w-3xl">
+      <div className="max-w-xl px-3 pb-10 sm:px-5">
+        <h2 className="text-primary font-doto mb-4 text-xl font-bold md:text-2xl">
           Skills
-          <div></div>
+          <span className="text-accent ml-5 font-mono text-sm font-medium">
+            Which I use/know
+          </span>
         </h2>
+
+        <p className="text-muted-foreground mb-8 text-sm text-pretty">
+          These are the technologies I've learned and worked with. This list is
+          constantly evolving as I continue to learn and grow as a developer.
+        </p>
+
+        <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-2">
+            <h3 className="text-muted-foreground text-sm">
+              &lt; LANGUAGES /&gt;
+            </h3>
+            <ul className="flex flex-wrap gap-3">
+              {languages.map((language) => (
+                <li key={language.name}>
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    className="hover:ring-accent-foreground delay-100 hover:ring"
+                  >
+                    <img src={language.path} alt="" width={15} />
+                    {language.name}
+                  </Button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <h3 className="text-muted-foreground text-sm">
+              &lt; FRAMEWORKS / LIBRARIES /&gt;
+            </h3>
+            <ul className="flex flex-wrap gap-3">
+              {libraries.map((language) => (
+                <li key={language.name}>
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    className="hover:ring-accent-foreground delay-100 hover:ring"
+                  >
+                    <img src={language.path} alt="" width={15} />
+                    {language.name}
+                  </Button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <h3 className="text-muted-foreground text-sm">
+              &lt; BACKEND & RUNTIME /&gt;
+            </h3>
+            <ul className="flex flex-wrap gap-3">
+              {runtime.map((language) => (
+                <li key={language.name}>
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    className="hover:ring-accent-foreground delay-100 hover:ring"
+                  >
+                    <img src={language.path} alt="" width={15} />
+                    {language.name}
+                  </Button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <h3 className="text-muted-foreground text-sm">
+              &lt; DATABASE /&gt;
+            </h3>
+            <ul className="flex flex-wrap gap-3">
+              {database.map((language) => (
+                <li key={language.name}>
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    className="hover:ring-accent-foreground delay-100 hover:ring"
+                  >
+                    <img src={language.path} alt="" width={15} />
+                    {language.name}
+                  </Button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <h3 className="text-muted-foreground text-sm">
+              &lt; DEVELOPER TOOLS /&gt;
+            </h3>
+            <ul className="flex flex-wrap gap-3">
+              {developerTools.map((language) => (
+                <li key={language.name}>
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    className="hover:ring-accent-foreground delay-100 hover:ring"
+                  >
+                    <img src={language.path} alt="" width={15} />
+                    {language.name}
+                  </Button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
+      <div className="pointer-events-none absolute bottom-0 left-1/2 h-px w-screen -translate-x-1/2 bg-gradient-to-r from-slate-100/20 via-transparent to-slate-100/20" />
     </Container>
   );
 };
