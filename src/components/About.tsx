@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import Container from "./Container";
-import { LocateFixed } from "lucide-react";
+import Container from "@/components/Container";
+import { LocateFixed, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const About = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -13,17 +14,17 @@ const About = () => {
   });
   const time = formatter.format(currentTime);
 
-    useEffect(() => {
-      const timer = setInterval(() => {
-        setCurrentTime(new Date());
-      }, 10000);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 10000);
 
-      return () => clearInterval(timer);
-    }, []);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <Container className="relative mt-5 max-w-3xl">
-      <div className="px-3 pb-10 sm:px-5">
+      <div className="px-3 pb-6 sm:px-5">
         <div className="text-muted-foreground mb-5 flex items-center justify-between text-sm">
           <h3>IN {time}</h3>
           <div className="flex items-center gap-1">
@@ -42,11 +43,14 @@ const About = () => {
             />
           </div>
 
-          <div>
-            <h1 className="text-primary font-doto text-xl font-bold md:text-3xl">
-              Ajay
+          <div className="flex flex-col gap-2">
+            <h1 className="text-primary font-doto text-xl font-bold tracking-tight md:text-3xl">
+              Ajay Shekhawat
             </h1>
-            <a href="#" className="text-muted-foreground hover:text-primary">
+            <a
+              href="#"
+              className="text-muted-foreground hover:text-primary text-sm delay-100"
+            >
               @meiajayhoon
             </a>
           </div>
@@ -68,6 +72,25 @@ const About = () => {
             I love solving problems, learning by doing, and pushing myself with
             every new challenge.
           </p>
+        </div>
+
+        <div className="mt-10 flex max-w-md flex-wrap items-center gap-4">
+          <div className="bg-accent flex items-center gap-2 rounded-md px-2 py-2 delay-100 hover:ring hover:ring-green-600">
+            <span className="relative flex size-3">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+              <span className="relative inline-flex size-3 rounded-full bg-green-600"></span>
+            </span>
+            <h3 className="text-accent-foreground text-[13px] font-light tracking-wide">
+              Available for new opportunities
+            </h3>
+          </div>
+          <Button
+            variant="secondary"
+            className="hover:ring-accent-foreground text-[13px] delay-100 hover:ring"
+          >
+            <Download />
+            Download CV
+          </Button>
         </div>
       </div>
 

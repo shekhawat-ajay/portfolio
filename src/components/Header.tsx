@@ -1,6 +1,5 @@
 import Container from "@/components/Container";
-import { Menu, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
 import { ModeToggle } from "@/components/ModeToggle";
 import {
   Menubar,
@@ -13,6 +12,7 @@ import {
 
 const Header = () => {
   const navItems = [
+    { title: "Home", href: "/home" },
     { title: "Contact", href: "/contact" },
     { title: "Blogs", href: "/blogs" },
     // { title: "Labs", href: "/labs" },
@@ -22,18 +22,16 @@ const Header = () => {
   ];
 
   return (
-    <Container className="sticky max-w-3xl">
+    <Container className="max-w-3xl">
       <div className="relative px-3 pt-4 pb-4 sm:px-5">
         <div className="flex items-center justify-between">
           <h2 className="text-muted-foreground hover:text-primary tracking-tight">
-            <a href="/home">Ajay Shekhawat</a>
+            <a href="/home">
+              <img src="favicon.svg" alt="logo" width={35} />
+            </a>
           </h2>
 
           <nav className="text-muted-foreground hidden items-center gap-4 text-sm sm:flex">
-            <Button variant="outline">
-              <Download />
-              Download CV
-            </Button>
             <ul className="flex items-center gap-5">
               {navItems.map((navItem) => (
                 <li key={navItem.title} className="hover:text-primary">
@@ -56,10 +54,6 @@ const Header = () => {
                   />
                 </MenubarTrigger>
                 <MenubarContent className="sm:hidden">
-                  <MenubarItem>
-                    <Download />
-                    Download CV
-                  </MenubarItem>
                   <MenubarSeparator />
                   <MenubarItem>Contact</MenubarItem>
                   <MenubarSeparator />
