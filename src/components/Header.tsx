@@ -25,11 +25,7 @@ const Header = () => {
     <Container className="max-w-3xl">
       <div className="relative px-3 pt-4 pb-4 sm:px-5">
         <div className="flex items-center justify-between">
-          <h2 className="text-muted-foreground hover:text-primary tracking-tight">
-            <a href="/home">
-              <img src="favicon.svg" alt="logo" width={35} />
-            </a>
-          </h2>
+          <ModeToggle />
 
           <nav className="text-muted-foreground hidden items-center gap-4 text-sm sm:flex">
             <ul className="flex items-center gap-5">
@@ -39,11 +35,9 @@ const Header = () => {
                 </li>
               ))}
             </ul>
-            <ModeToggle />
           </nav>
 
           <div className="flex items-center gap-2 sm:hidden">
-            <ModeToggle />
             <Menubar className="border-none">
               <MenubarMenu>
                 <MenubarTrigger>
