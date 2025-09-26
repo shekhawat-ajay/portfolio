@@ -44,7 +44,7 @@ const About = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <h1 className="text-primary font-doto text-xl font-bold tracking-tight md:text-3xl">
+            <h1 className="text-primary font-heading text-2xl font-medium md:text-3xl">
               Ajay Shekhawat
             </h1>
             <a
@@ -80,7 +80,7 @@ const About = () => {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
               <span className="relative inline-flex size-3 rounded-full bg-green-600"></span>
             </span>
-            <h3 className="text-accent-foreground text-[13px] font-light tracking-wide">
+            <h3 className="text-accent-foreground font-heading text-[13px] font-light tracking-wide">
               Available for new opportunities
             </h3>
           </div>

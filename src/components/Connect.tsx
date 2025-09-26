@@ -1,20 +1,22 @@
 import Container from "@/components/Container";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 
-const Contact = () => {
+const Connect = () => {
   const socialHandles = [
-    { name: "Email Me", path: "/google-gmail.svg" },
-    { name: "Twitter", path: "/x-light.svg" },
-    { name: "GitHub", path: "/github.svg" },
-    { name: "LinkedIN", path: "/linkedin-icon.svg" },
-    { name: "Peerlist", path: "/peerlist.webp" },
+    { name: "Email Me", path: "/google-gmail.svg", link: "email.com" },
+    { name: "GitHub", path: "/github.svg", link: "github.com" },
+    { name: "LinkedIN", path: "/linkedin.svg", link: "linkedIN.com" },
+    { name: "Peerlist", path: "/peerlist.webp", link: "peerlist.com" },
+    { name: "Discord", path: "/discord.svg", link: "Discord.com" },
+    // { name: "BlueSky", path: "/bluesky.svg", link: "BlueSky.com" },
+    // { name: "Twitter", path: "/x-light.svg", link: "twitter.com" },
   ];
   return (
     <Container className="relative mt-5 max-w-3xl">
-      <div className="max-w-xl px-3 pb-6 sm:px-5">
-        <h3 className="text-muted-foreground text-sm mb-5">
+      <div className="max-w-fit px-3 pb-6 sm:px-5">
+        <h2 className="text-muted-foreground font-heading mb-5 text-sm">
           Where to find me (digitally) if you wish to
-        </h3>
+        </h2>
         <div>
           <ul className="flex flex-wrap gap-3">
             {socialHandles.map((handle) => (
@@ -24,7 +26,7 @@ const Contact = () => {
                   size="sm"
                   className="hover:ring-accent-foreground delay-100 hover:ring"
                 >
-                  <img src={handle.path} alt="" width={15} />
+                  <img src={handle.path} alt="" width={17} />
                   {handle.name}
                 </Button>
               </li>
@@ -38,4 +40,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Connect;

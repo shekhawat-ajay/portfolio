@@ -1,5 +1,5 @@
 import Container from "./Container";
-import { Button } from "./ui/button";
+import { Badge } from "@/components/ui/badge";
 
 const Skills = () => {
   const languages = [
@@ -12,8 +12,8 @@ const Skills = () => {
     { name: "React", path: "/reactjs.svg" },
     { name: "React Query", path: "/react-query.svg" },
     { name: "React Router", path: "/reactrouter.svg" },
-    { name: "Framer Motion", path: "/framer-motion.svg" },
     { name: "Tailwind CSS", path: "/tailwindcss.svg" },
+    { name: "Framer Motion", path: "/framer-motion.svg" },
     { name: "Express.js", path: "/expressjs.svg" },
   ];
 
@@ -31,9 +31,9 @@ const Skills = () => {
   return (
     <Container className="relative mt-8 max-w-3xl">
       <div className="max-w-xl px-3 pb-10 sm:px-5">
-        <h2 className="text-primary font-doto mb-4 text-xl font-bold md:text-2xl">
+        <h2 className="text-primary font-heading mb-4 text-xl font-bold md:text-2xl">
           Skills
-          <span className="text-accent ml-5 font-mono text-sm font-medium">
+          <span className="text-accent ml-5 font-sans text-sm font-medium">
             Which I use/know
           </span>
         </h2>
@@ -44,101 +44,96 @@ const Skills = () => {
         </p>
 
         <div className="flex flex-col gap-5">
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3 ">
             <h3 className="text-muted-foreground text-sm">
               &lt; LANGUAGES /&gt;
             </h3>
-            <ul className="flex flex-wrap gap-3">
+            <ul className="flex flex-wrap gap-2">
               {languages.map((language) => (
                 <li key={language.name}>
-                  <Button
+                  <Badge
                     variant="secondary"
-                    size="sm"
-                    className="hover:ring-accent-foreground delay-100 hover:ring"
+                    className="hover:ring-accent-foreground py-1 delay-100 hover:ring"
                   >
                     <img src={language.path} alt="" width={15} />
                     {language.name}
-                  </Button>
+                  </Badge>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3 max-w-md">
             <h3 className="text-muted-foreground text-sm">
               &lt; FRAMEWORKS / LIBRARIES /&gt;
             </h3>
-            <ul className="flex flex-wrap gap-3">
+            <ul className="flex flex-wrap gap-2">
               {libraries.map((language) => (
                 <li key={language.name}>
-                  <Button
+                  <Badge
                     variant="secondary"
-                    size="sm"
-                    className="hover:ring-accent-foreground delay-100 hover:ring"
+                    className="hover:ring-accent-foreground py-1 delay-100 hover:ring"
                   >
                     <img src={language.path} alt="" width={15} />
                     {language.name}
-                  </Button>
+                  </Badge>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3">
             <h3 className="text-muted-foreground text-sm">
               &lt; BACKEND & RUNTIME /&gt;
             </h3>
-            <ul className="flex flex-wrap gap-3">
+            <ul className="flex flex-wrap gap-2">
               {runtime.map((language) => (
                 <li key={language.name}>
-                  <Button
+                  <Badge
                     variant="secondary"
-                    size="sm"
-                    className="hover:ring-accent-foreground delay-100 hover:ring"
+                    className="hover:ring-accent-foreground py-1 delay-100 hover:ring"
                   >
                     <img src={language.path} alt="" width={15} />
                     {language.name}
-                  </Button>
+                  </Badge>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3">
             <h3 className="text-muted-foreground text-sm">
               &lt; DATABASE /&gt;
             </h3>
-            <ul className="flex flex-wrap gap-3">
+            <ul className="flex flex-wrap gap-2">
               {database.map((language) => (
                 <li key={language.name}>
-                  <Button
+                  <Badge
                     variant="secondary"
-                    size="sm"
-                    className="hover:ring-accent-foreground delay-100 hover:ring"
+                    className="hover:ring-accent-foreground py-1 delay-100 hover:ring"
                   >
                     <img src={language.path} alt="" width={15} />
                     {language.name}
-                  </Button>
+                  </Badge>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3">
             <h3 className="text-muted-foreground text-sm">
               &lt; DEVELOPER TOOLS /&gt;
             </h3>
-            <ul className="flex flex-wrap gap-3">
+            <ul className="flex flex-wrap gap-2">
               {developerTools.map((language) => (
                 <li key={language.name}>
-                  <Button
+                  <Badge
                     variant="secondary"
-                    size="sm"
-                    className="hover:ring-accent-foreground delay-100 hover:ring"
+                    className="hover:ring-accent-foreground py-1 delay-100 hover:ring"
                   >
                     <img src={language.path} alt="" width={15} />
                     {language.name}
-                  </Button>
+                  </Badge>
                 </li>
               ))}
             </ul>
