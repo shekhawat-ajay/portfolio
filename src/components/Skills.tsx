@@ -44,7 +44,7 @@ const Skills = () => {
         </p>
 
         <div className="flex flex-col gap-5">
-          <div className="flex flex-col gap-3 ">
+          <div className="flex flex-col gap-3">
             <h3 className="text-muted-foreground text-sm">
               &lt; LANGUAGES /&gt;
             </h3>
@@ -63,7 +63,7 @@ const Skills = () => {
             </ul>
           </div>
 
-          <div className="flex flex-col gap-3 max-w-md">
+          <div className="flex max-w-md flex-col gap-3">
             <h3 className="text-muted-foreground text-sm">
               &lt; FRAMEWORKS / LIBRARIES /&gt;
             </h3>
@@ -140,7 +140,7 @@ const Skills = () => {
           </div>
         </div>
       </div>
-      <div className="pointer-events-none absolute bottom-0 left-1/2 h-px w-screen -translate-x-1/2 bg-gradient-to-r from-slate-100/20 via-transparent to-slate-100/20" />
+      <div className="pointer-events-none absolute bottom-0 left-1/2 h-px w-screen -translate-x-1/2 bg-gradient-to-r from-slate-500/5 via-slate-500/25 to-slate-500/5" />
     </Container>
   );
 };

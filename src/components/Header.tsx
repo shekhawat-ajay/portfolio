@@ -62,7 +62,7 @@ const Header = () => {
         </div>
 
         {/* Full-width horizontal line */}
-        <div className="pointer-events-none absolute bottom-0 left-1/2 h-px w-screen -translate-x-1/2 bg-gradient-to-r from-slate-100/20 via-transparent to-slate-100/20" />
+        <div className="pointer-events-none absolute bottom-0 left-1/2 h-px w-screen -translate-x-1/2 bg-gradient-to-r from-slate-400/10 via-slate-500/45 to-slate-400/10" />
       </div>
     </Container>
   );
