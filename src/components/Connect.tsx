@@ -12,8 +12,8 @@ const Connect = () => {
     // { name: "Twitter", path: "/x-light.svg", link: "twitter.com" },
   ];
   return (
-    <Container className="relative mt-5 max-w-3xl">
-      <div className="max-w-fit px-3 pb-6 sm:px-5">
+    <Container className="relative max-w-3xl">
+      <div className="mt-5 max-w-fit px-3 pb-6 sm:px-5">
         <h2 className="text-muted-foreground font-heading mb-5 text-sm">
           Where to find me (digitally) if you wish to
         </h2>

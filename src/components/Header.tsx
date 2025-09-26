@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <Container className="max-w-3xl">
-      <div className="relative px-3 pt-4 pb-4 sm:px-5">
+      <div className="relative px-3 pt-6 pb-4 sm:px-5">
         <div className="flex items-center justify-between">
           <ModeToggle />
 

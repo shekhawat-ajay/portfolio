@@ -23,8 +23,8 @@ const About = () => {
   }, []);
 
   return (
-    <Container className="relative mt-5 max-w-3xl">
-      <div className="px-3 pb-6 sm:px-5">
+    <Container className="relative max-w-3xl">
+      <div className="px-3 pb-6 mt-5 sm:px-5">
         <div className="text-muted-foreground mb-5 flex items-center justify-between text-sm">
           <h3>IN {time}</h3>
           <div className="flex items-center gap-1">
@@ -75,10 +75,10 @@ const About = () => {
         </div>
 
         <div className="mt-10 flex max-w-md flex-wrap items-center gap-4">
-          <div className="bg-accent flex items-center gap-2 rounded-md px-2 py-2 delay-100 hover:ring hover:ring-green-600">
+          <div className="bg-accent flex items-center gap-2 rounded-md px-3 py-2 delay-100 hover:ring hover:ring-green-600">
             <span className="relative flex size-3">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
-              <span className="relative inline-flex size-3 rounded-full bg-green-600"></span>
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex size-3 rounded-full bg-green-500"></span>
             </span>
             <h3 className="text-accent-foreground font-heading text-[13px] font-light tracking-wide">
               Available for new opportunities

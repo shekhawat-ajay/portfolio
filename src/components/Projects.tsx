@@ -3,8 +3,8 @@ import Container from "./Container";
 const Projects = () => {
   const projects = [{ name: "Drizzle", description: "A weather app." }];
   return (
-    <Container className="mt-8 max-w-3xl">
-      <div className="mx-5">
+    <Container className="relative max-w-3xl">
+      <div className="max-w-xl px-3 pb-8 mt-8 sm:px-5">
         <h3 className="text-primary font-heading mb-5 text-xl font-bold md:text-2xl">
           Projects
         </h3>
@@ -12,6 +12,7 @@ const Projects = () => {
           <div></div>
         </div>
       </div>
+            <div className="pointer-events-none absolute bottom-0 left-1/2 h-px w-screen -translate-x-1/2 bg-gradient-to-r from-slate-500/5 via-slate-500/25 to-slate-500/5" />
     </Container>
   );
 };
