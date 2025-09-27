@@ -8,12 +8,12 @@ const Connect = () => {
     { name: "LinkedIN", path: "/linkedin.svg", link: "linkedIN.com" },
     { name: "Peerlist", path: "/peerlist.webp", link: "peerlist.com" },
     { name: "Discord", path: "/discord.svg", link: "Discord.com" },
-    // { name: "BlueSky", path: "/bluesky.svg", link: "BlueSky.com" },
-    // { name: "Twitter", path: "/x-light.svg", link: "twitter.com" },
+    { name: "BlueSky", path: "/bluesky.svg", link: "BlueSky.com" },
+    { name: "Twitter", path: "/x-light.svg", link: "twitter.com" },
   ];
   return (
     <Container className="relative max-w-3xl">
-      <div className="mt-5 max-w-fit px-3 pb-6 sm:px-5">
+      <div className="mt-5 max-w-lg px-3 pb-6 sm:px-5">
         <h2 className="text-muted-foreground font-heading mb-5 text-sm">
           Where to find me (digitally) if you wish to
         </h2>
@@ -35,7 +35,7 @@ const Connect = () => {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute bottom-0 left-1/2 h-px w-screen -translate-x-1/2 bg-gradient-to-r from-slate-500/5 via-slate-500/25 to-slate-500/5" />
+      <div className="pointer-events-none absolute bottom-0 left-1/2 h-px w-screen -translate-x-1/2 bg-gradient-to-r from-slate-400/5 via-slate-500/30 to-slate-400/5" />
     </Container>
   );
 };
