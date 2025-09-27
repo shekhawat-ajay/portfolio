@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import { Menu } from "lucide-react";
 import { ModeToggle } from "@/components/ModeToggle";
+import { Link } from "react-router";
 import {
   Menubar,
   MenubarContent,
@@ -12,7 +13,7 @@ import {
 
 const Header = () => {
   const navItems = [
-    { title: "Home", href: "/home" },
+    { title: "Home", href: "/" },
     { title: "Contact", href: "/contact" },
     { title: "Blogs", href: "/blogs" },
     // { title: "Labs", href: "/labs" },
@@ -32,7 +33,7 @@ const Header = () => {
             <ul className="flex items-center gap-5">
               {navItems.map((navItem) => (
                 <li key={navItem.title} className="hover:text-primary">
-                  <a href={navItem.href}>{navItem.title}</a>
+                  <Link to={navItem.href}>{navItem.title}</Link>
                 </li>
               ))}
             </ul>

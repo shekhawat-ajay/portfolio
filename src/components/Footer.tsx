@@ -8,7 +8,7 @@ const Footer = () => {
           That's all, folks | Designed & built with more headache...
         </p>
         <p className="text-muted-foreground text-center text-sm">
-          © 2025 Ajay Shekhawat. All rights reserved (even the bugs).
+          © {new Date().getFullYear() } Ajay Shekhawat. All rights reserved (even the bugs).
         </p>
       </div>
     </Container>

@@ -30,7 +30,7 @@ const Skills = () => {
 
   return (
     <Container className="relative max-w-3xl">
-      <div className="max-w-xl px-3 pb-8 mt-8 sm:px-5">
+      <div className="mt-8 max-w-xl px-3 pb-8 sm:px-5">
         <h2 className="text-primary font-heading mb-4 text-xl font-bold md:text-2xl">
           Skills
           <span className="text-accent ml-5 font-sans text-sm font-medium">
