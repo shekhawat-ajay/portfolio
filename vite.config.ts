@@ -23,23 +23,20 @@ export default defineConfig({
       output: {
         manualChunks: {
           "react-vendor": ["react", "react-dom"],
-          utils: ["axios", "swr"],
         },
       },
     },
   },
 
   /* Development optimizations */
-  server: {
-    port: 3000,
-    strictPort: false,
-    host: true,
-    open: true,
-  },
-
-  /* Preview optimizations */
   preview: {
     port: 4173,
-    strictPort: false,
+    strictPort: true,
+  },
+  server: {
+    port: 5173,
+    strictPort: true,
+    host: "0.0.0.0",
+    open: true,
   },
 });

@@ -9,11 +9,10 @@ function App() {
   return (
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
         <Routes>
-          {/* Your existing routes */}
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/blogs" element={<NotFound />} />
-          {/* Catch-all 404 route */}
+          <Route path="/blogs" element={<Blog />} />
+          
           <Route path="*" element={<NotFound />} />
         </Routes>
       </ThemeProvider>

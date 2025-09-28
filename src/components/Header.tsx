@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import { Menu } from "lucide-react";
 import { ModeToggle } from "@/components/ModeToggle";
-import { Link } from "react-router";
+import { NavLink, Link } from "react-router";
 import {
   Menubar,
   MenubarContent,
@@ -29,11 +29,20 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <ModeToggle />
 
-          <nav className="text-muted-foreground hidden items-center gap-4 text-sm sm:flex">
+          <nav className="hidden items-center gap-4 text-sm sm:flex">
             <ul className="flex items-center gap-5">
               {navItems.map((navItem) => (
                 <li key={navItem.title} className="hover:text-primary">
-                  <Link to={navItem.href}>{navItem.title}</Link>
+                  <NavLink
+                    to={navItem.href}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "text-primary underline underline-offset-6"
+                        : "text-muted-foreground hover:text-primary"
+                    }
+                  >
+                    {navItem.title}
+                  </NavLink>
                 </li>
               ))}
             </ul>
@@ -50,12 +59,16 @@ const Header = () => {
                   />
                 </MenubarTrigger>
                 <MenubarContent className="sm:hidden">
-                  <MenubarSeparator />
-                  <MenubarItem>Contact</MenubarItem>
-                  <MenubarSeparator />
-                  <MenubarItem>Blogs</MenubarItem>
-                  {/* <MenubarSeparator /> */}
-                  {/* <MenubarItem>Labs</MenubarItem> */}
+                  {navItems.map((navItem) => (
+                    <>
+                      <MenubarSeparator />
+                      <Link to={navItem.href}>
+                        <MenubarItem key={navItem.title}>
+                          {navItem.title}
+                        </MenubarItem>
+                      </Link>
+                    </>
+                  ))}
                 </MenubarContent>
               </MenubarMenu>
             </Menubar>

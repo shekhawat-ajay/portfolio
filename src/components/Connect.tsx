@@ -24,7 +24,7 @@ const Connect = () => {
                 <Button
                   variant="secondary"
                   size="sm"
-                  className="hover:ring-accent-foreground delay-100 hover:ring"
+                  className="hover:ring-accent-foreground delay-100 hover:ring cursor-pointer"
                 >
                   <img src={handle.path} alt="" width={17} />
                   {handle.name}
