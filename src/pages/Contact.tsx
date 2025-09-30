@@ -1,6 +1,7 @@
 import Container from "@/components/Container";
 import GetInTouch from "@/components/GetInTouch";
 import Header from "@/components/Header";
+import { Toaster } from "sonner";
 
 const Contact = () => {
   return (
@@ -14,6 +15,7 @@ const Contact = () => {
 
       <Header />
       <GetInTouch />
+      <Toaster richColors />
     </Container>
   );
 };

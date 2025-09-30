@@ -34,7 +34,7 @@ const GetInTouch = () => {
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
-    toast("Event has been created");
+    toast.success("You will hear from me soon!!!");
   }
 
   return (
@@ -42,7 +42,7 @@ const GetInTouch = () => {
       <h2 className="font-heading text-primary mx-auto mt-10 max-w-md pb-10 text-center text-3xl">
         Let's work <span className="text-highlight">together!</span>
       </h2>
-      <div className="mx-auto flex max-w-md flex-col gap-2 pb-10">
+      <div className="mx-auto flex max-w-2xs flex-col gap-2 pb-10 sm:max-w-md">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <FormField
