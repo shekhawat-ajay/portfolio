@@ -15,6 +15,7 @@ const Skills = () => {
     { name: "Tailwind CSS", path: "/tailwindcss.svg" },
     { name: "Framer Motion", path: "/framer-motion.svg" },
     { name: "Express.js", path: "/expressjs.svg" },
+    { name: "Zod", path: "/zod.png" },
   ];
 
   const runtime = [{ name: "Node.js", path: "/nodejs.svg" }];
