@@ -1,5 +1,5 @@
 import Container from "./Container";
-import { Badge } from "@/components/ui/badge";
+import { Badge } from "@/components/ui";
 
 const Skills = () => {
   const languages = [

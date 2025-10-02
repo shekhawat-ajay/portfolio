@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import GetInTouch from "@/components/GetInTouch";
 import Header from "@/components/Header";
-import { Toaster } from "sonner";
+import { Toaster } from "@/components/ui/sonner";
 
 const Contact = () => {
   return (

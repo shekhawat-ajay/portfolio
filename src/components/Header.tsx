@@ -1,6 +1,5 @@
-import Container from "@/components/Container";
+import { Container, ModeToggle } from "@/components";
 import { Menu } from "lucide-react";
-import { ModeToggle } from "@/components/ModeToggle";
 import { NavLink, Link } from "react-router";
 import {
   Menubar,

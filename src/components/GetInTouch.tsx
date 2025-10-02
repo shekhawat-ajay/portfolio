@@ -1,6 +1,5 @@
-import Container from "@/components/Container";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import {Container} from "@/components";
+import { Input, Button } from "@/components/ui";
 import { toast } from "sonner";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -105,7 +104,7 @@ const GetInTouch = () => {
               )}
             />
             <Button
-              className="hover:bg-green-700 hover:text-white"
+              className="delay-150 hover:bg-green-700 hover:text-white"
               type="submit"
             >
               Submit

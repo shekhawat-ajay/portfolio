@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Container from "@/components/Container";
 import { LocateFixed, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Container } from "@/components";
+import { Button } from "@/components/ui";
 
 const About = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -74,7 +74,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="mt-10 flex max-w-md flex-wrap items-center gap-4 cursor-pointer">
+        <div className="mt-10 flex max-w-md cursor-pointer flex-wrap items-center gap-4">
           <div className="bg-accent hover:ring-highlight/75 flex items-center gap-2 rounded-md px-3 py-2 delay-100 hover:ring">
             <span className="relative flex size-3">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
@@ -86,7 +86,7 @@ const About = () => {
           </div>
           <Button
             variant="secondary"
-            className="hover:ring-accent-foreground text-[13px] delay-100 hover:ring cursor-pointer"
+            className="hover:ring-accent-foreground cursor-pointer text-[13px] delay-100 hover:ring"
           >
             <Download />
             Download CV
