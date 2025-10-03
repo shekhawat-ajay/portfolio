@@ -3,30 +3,30 @@ import { Badge } from "@/components/ui";
 
 const Skills = () => {
   const languages = [
-    { name: "TypeScript", path: "/typescript.svg" },
-    { name: "JavaScript", path: "/javascript.svg" },
-    { name: "Python", path: "/python.svg" },
+    { name: "TypeScript", path: "/typescript.svg", size: 15 },
+    { name: "JavaScript", path: "/javascript.svg", size: 15 },
+    { name: "Python", path: "/python.svg", size: 15 },
   ];
 
   const libraries = [
-    { name: "React", path: "/reactjs.svg" },
-    { name: "React Query", path: "/react-query.svg" },
-    { name: "React Router", path: "/reactrouter.svg" },
-    { name: "Tailwind CSS", path: "/tailwindcss.svg" },
-    { name: "Framer Motion", path: "/framer-motion.svg" },
-    { name: "Express.js", path: "/expressjs.svg" },
-    { name: "Zod", path: "/zod.png" },
+    { name: "React", path: "/reactjs.svg", size: 15 },
+    { name: "React Query", path: "/react-query.svg", size: 15 },
+    { name: "React Router", path: "/reactrouter.svg", size: 15 },
+    { name: "Tailwind CSS", path: "/tailwindcss.svg", size: 15 },
+    { name: "Framer Motion", path: "/framer-motion.svg", size: 12 },
+    { name: "Express.js", path: "/expressjs.svg", size: 15 },
+    { name: "Zod", path: "/zod.png", size: 15 },
   ];
 
-  const runtime = [{ name: "Node.js", path: "/nodejs.svg" }];
+  const runtime = [{ name: "Node.js", path: "/nodejs.svg", size: 15 }];
 
-  const database = [{ name: "MongoDB", path: "/mongodb.svg" }];
+  const database = [{ name: "MongoDB", path: "/mongodb.svg", size: 15 }];
 
   const developerTools = [
-    { name: "Git", path: "/git.svg" },
-    { name: "GitHub", path: "/github.svg" },
-    { name: "VS Code", path: "/VScode.svg" },
-    { name: "Postman", path: "/Postman.svg" },
+    { name: "Git", path: "/git.svg", size: 15 },
+    { name: "GitHub", path: "/github.svg", size: 15 },
+    { name: "VS Code", path: "/VScode.svg", size: 15 },
+    { name: "Postman", path: "/Postman.svg", size: 15 },
   ];
 
   return (
@@ -56,7 +56,7 @@ const Skills = () => {
                     variant="secondary"
                     className="hover:ring-accent-foreground py-1 delay-100 hover:ring"
                   >
-                    <img src={language.path} alt="" width={15} />
+                    <img src={language.path} alt="" width={language.size} />
                     {language.name}
                   </Badge>
                 </li>
@@ -69,14 +69,14 @@ const Skills = () => {
               &lt; FRAMEWORKS / LIBRARIES /&gt;
             </h3>
             <ul className="flex flex-wrap gap-2">
-              {libraries.map((language) => (
-                <li key={language.name}>
+              {libraries.map((library) => (
+                <li key={library.name}>
                   <Badge
                     variant="secondary"
                     className="hover:ring-accent-foreground py-1 delay-100 hover:ring"
                   >
-                    <img src={language.path} alt="" width={15} />
-                    {language.name}
+                    <img src={library.path} alt="" width={library.size} />
+                    {library.name}
                   </Badge>
                 </li>
               ))}
@@ -88,14 +88,14 @@ const Skills = () => {
               &lt; BACKEND & RUNTIME /&gt;
             </h3>
             <ul className="flex flex-wrap gap-2">
-              {runtime.map((language) => (
-                <li key={language.name}>
+              {runtime.map((runtime) => (
+                <li key={runtime.name}>
                   <Badge
                     variant="secondary"
                     className="hover:ring-accent-foreground py-1 delay-100 hover:ring"
                   >
-                    <img src={language.path} alt="" width={15} />
-                    {language.name}
+                    <img src={runtime.path} alt="" width={runtime.size} />
+                    {runtime.name}
                   </Badge>
                 </li>
               ))}
@@ -107,14 +107,14 @@ const Skills = () => {
               &lt; DATABASE /&gt;
             </h3>
             <ul className="flex flex-wrap gap-2">
-              {database.map((language) => (
-                <li key={language.name}>
+              {database.map((database) => (
+                <li key={database.name}>
                   <Badge
                     variant="secondary"
                     className="hover:ring-accent-foreground py-1 delay-100 hover:ring"
                   >
-                    <img src={language.path} alt="" width={15} />
-                    {language.name}
+                    <img src={database.path} alt="" width={database.size} />
+                    {database.name}
                   </Badge>
                 </li>
               ))}
@@ -126,14 +126,14 @@ const Skills = () => {
               &lt; DEVELOPER TOOLS /&gt;
             </h3>
             <ul className="flex flex-wrap gap-2">
-              {developerTools.map((language) => (
-                <li key={language.name}>
+              {developerTools.map((tool) => (
+                <li key={tool.name}>
                   <Badge
                     variant="secondary"
                     className="hover:ring-accent-foreground py-1 delay-100 hover:ring"
                   >
-                    <img src={language.path} alt="" width={15} />
-                    {language.name}
+                    <img src={tool.path} alt="" width={tool.size} />
+                    {tool.name}
                   </Badge>
                 </li>
               ))}

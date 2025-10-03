@@ -1,16 +1,25 @@
 import { Container } from "@/components";
 import { Button } from "@/components/ui";
 
-
 const Connect = () => {
   const socialHandles = [
-    { name: "Email Me", path: "/google-gmail.svg", link: "email.com" },
-    { name: "GitHub", path: "/github.svg", link: "github.com" },
-    { name: "LinkedIN", path: "/linkedin.svg", link: "linkedIN.com" },
-    { name: "Peerlist", path: "/peerlist.webp", link: "peerlist.com" },
-    { name: "Discord", path: "/discord.svg", link: "Discord.com" },
-    { name: "BlueSky", path: "/bluesky.svg", link: "BlueSky.com" },
-    { name: "Twitter", path: "/x-light.svg", link: "twitter.com" },
+    {
+      name: "Email Me",
+      path: "/google-gmail.svg",
+      link: "email.com",
+      size: 17,
+    },
+    { name: "GitHub", path: "/github.svg", link: "github.com", size: 17 },
+    { name: "LinkedIN", path: "/linkedin.svg", link: "linkedIN.com", size: 17 },
+    {
+      name: "Peerlist",
+      path: "/peerlist.webp",
+      link: "peerlist.com",
+      size: 17,
+    },
+    { name: "Discord", path: "/discord.svg", link: "Discord.com", size: 17 },
+    { name: "BlueSky", path: "/bluesky.svg", link: "BlueSky.com", size: 17 },
+    { name: "Twitter", path: "/x-light.svg", link: "twitter.com", size: 12 },
   ];
   return (
     <Container className="relative max-w-3xl">
@@ -25,9 +34,9 @@ const Connect = () => {
                 <Button
                   variant="secondary"
                   size="sm"
-                  className="hover:ring-accent-foreground delay-100 hover:ring cursor-pointer"
+                  className="hover:ring-accent-foreground cursor-pointer delay-100 hover:ring"
                 >
-                  <img src={handle.path} alt="" width={17} />
+                  <img src={handle.path} alt="" width={handle.size} />
                   {handle.name}
                 </Button>
               </li>

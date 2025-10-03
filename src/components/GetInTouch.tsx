@@ -1,5 +1,5 @@
-import {Container} from "@/components";
-import { Input, Button } from "@/components/ui";
+import { Container } from "@/components";
+import { Input, Button, Textarea } from "@/components/ui";
 import { toast } from "sonner";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -12,29 +12,47 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Textarea } from "./ui/textarea";
 
 const formSchema = z.object({
   name: z
     .string()
-    .min(3, { message: "Name must be at least 3 characters" })
-    .max(36),
-  email: z.email({ message: "Invalid email address" }),
-  subject: z.string().min(10, { message: "Must be at least 10 characters." }),
-  message: z.string().min(10, { message: "Must be at least 10 characters." }),
+    .min(3, { message: "Name must be at least 3 characters." })
+    .max(36, { message: "Name cannot be longer than 36 characters." }),
+  email: z.email({ message: "Invalid email address." }),
+  subject: z
+    .string()
+    .min(10, { message: "Subject must be at least 10 characters." }),
+  message: z
+    .string()
+    .min(10, { message: "Message must be at least 10 characters." }),
 });
 
 const GetInTouch = () => {
-  // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: { name: "", email: "", subject: "", message: "" },
   });
 
-  // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    toast.success("You will hear from me soon!!!");
-  }
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    const promise = async () => {
+      const formData = new FormData();
+      formData.append(
+        "access_key",
+        import.meta.env["VITE_WEB3FORMS_PUBLIC_ACCESS_KEY"],
+      );
+
+      Object.entries(values).forEach(([key, value]) => {
+        formData.append(key, value);
+      });
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+    };
+  };
 
   return (
     <Container className="relative max-w-3xl">

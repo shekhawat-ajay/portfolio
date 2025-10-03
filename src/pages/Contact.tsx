@@ -1,3 +1,4 @@
+import { Footer } from "@/components";
 import Container from "@/components/Container";
 import GetInTouch from "@/components/GetInTouch";
 import Header from "@/components/Header";
@@ -15,6 +16,7 @@ const Contact = () => {
 
       <Header />
       <GetInTouch />
+      <Footer />
       <Toaster richColors />
     </Container>
   );
