@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <Container className="relative max-w-3xl">
       <div className="max-w-md mx-auto">
-        <div className="mt-10 mb-5">
+        <div className=" mb-5">
           <ul className="flex justify-center flex-wrap gap-3">
             {socialHandles.map((handle) => (
               <li key={handle.name}>

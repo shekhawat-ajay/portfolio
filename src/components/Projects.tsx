@@ -1,7 +1,6 @@
 import Container from "./Container";
 
 const Projects = () => {
-  const projects = [{ name: "Drizzle", description: "A weather app." }];
   return (
     <Container className="relative max-w-3xl">
       <div className="mt-8 max-w-xl px-3 pb-8 sm:px-5">

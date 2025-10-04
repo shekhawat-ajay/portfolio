@@ -16,15 +16,11 @@ import {
 const formSchema = z.object({
   name: z
     .string()
-    .min(3, { message: "Name must be at least 3 characters." })
-    .max(36, { message: "Name cannot be longer than 36 characters." }),
+    .min(2, { message: "Name too short" })
+    .max(36, { message: "Name too long" }),
   email: z.email({ message: "Invalid email address." }),
-  subject: z
-    .string()
-    .min(10, { message: "Subject must be at least 10 characters." }),
-  message: z
-    .string()
-    .min(10, { message: "Message must be at least 10 characters." }),
+  subject: z.string().min(10, { message: "At least 10 characters required" }),
+  message: z.string().min(10, { message: "At least 10 characters required" }),
 });
 
 const GetInTouch = () => {
@@ -34,24 +30,41 @@ const GetInTouch = () => {
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    const promise = async () => {
-      const formData = new FormData();
-      formData.append(
-        "access_key",
-        import.meta.env["VITE_WEB3FORMS_PUBLIC_ACCESS_KEY"],
-      );
-
-      Object.entries(values).forEach(([key, value]) => {
-        formData.append(key, value);
-      });
-
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
-
-      const data = await response.json();
+    const userInfo = {
+      userAgent: navigator.userAgent,
+      languages: navigator.languages?.join(", "),
+      screenResolution: `${window.screen.width}x${window.screen.height}`,
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
     };
+
+    toast.promise(
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: import.meta.env["VITE_WEB3FORMS_PUBLIC_ACCESS_KEY"],
+          from_name: "Portfolio Contact Form",
+          ...values,
+          ...userInfo
+        }),
+      }).then(async (response) => {
+        const data = await response.json();
+
+        if (!data.success) {
+          throw new Error(data.message || "Failed to send message");
+        }
+
+        form.reset();
+        return data;
+      }),
+      {
+        loading: "Sending your message...",
+        success: "Message sent! I'll get back to you soon.",
+        error: "Something went wrong.",
+      },
+    );
   };
 
   return (
@@ -67,11 +80,11 @@ const GetInTouch = () => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Username</FormLabel>
+                  <FormLabel>Name</FormLabel>
                   <FormControl>
                     <Input placeholder="John Doe" {...field} />
                   </FormControl>
-                  <FormMessage /> {/* Error messages appear here */}
+                  <FormMessage />
                 </FormItem>
               )}
             />
@@ -124,6 +137,7 @@ const GetInTouch = () => {
             <Button
               className="delay-150 hover:bg-green-700 hover:text-white"
               type="submit"
+              disabled={form.formState.isSubmitting}
             >
               Submit
             </Button>

@@ -15,8 +15,10 @@ const Contact = () => {
       </div>
 
       <Header />
-      <GetInTouch />
-      <Footer />
+        <GetInTouch />
+      <div className="mt-12">
+        <Footer />
+      </div>
       <Toaster richColors />
     </Container>
   );
