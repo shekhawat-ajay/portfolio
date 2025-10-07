@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { LocateFixed, Download } from "lucide-react";
 import { Container } from "@/components";
 import { Button } from "@/components/ui";
+import { motion } from "motion/react";
 
 const About = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -33,7 +34,17 @@ const About = () => {
           </div>
         </div>
 
-        <div className="mt-8 mb-8 flex items-center gap-4">
+        <motion.div
+          className="mt-8 mb-8 flex flex-col items-center justify-center gap-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            delay: 0.5,
+            duration: 0.5,
+            ease: "easeIn",
+            type: "tween",
+          }}
+        >
           <div>
             <img
               src="avatar.png"
@@ -43,7 +54,7 @@ const About = () => {
             />
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="text-center">
             <h1 className="text-primary font-heading text-2xl font-medium md:text-3xl">
               Ajay Shekhawat
             </h1>
@@ -54,9 +65,19 @@ const About = () => {
               @meiajayhoon
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="text-muted-foreground flex max-w-xl flex-col gap-4 text-sm text-pretty">
+        <motion.div
+          className="text-muted-foreground mx-auto max-w-md space-y-2.5 text-center text-sm text-pretty"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 1,
+            delay: 1,
+            ease: "easeIn",
+            type: "tween",
+          }}
+        >
           <p>
             I'm a{" "}
             <span className="text-primary font-bold">Full-Stack Developer</span>{" "}
@@ -72,9 +93,19 @@ const About = () => {
             I love solving problems, learning by doing, and pushing myself with
             every new challenge.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="mt-10 flex max-w-md cursor-pointer flex-wrap items-center gap-4">
+        <motion.div
+          className="mx-auto mt-10 flex max-w-md flex-wrap items-center gap-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 1,
+            delay: 1.5,
+            ease: "easeIn",
+            type: "tween",
+          }}
+        >
           <div className="bg-accent hover:ring-highlight/75 flex items-center gap-2 rounded-md px-3 py-2 delay-100 hover:ring">
             <span className="relative flex size-3">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
@@ -91,7 +122,7 @@ const About = () => {
             <Download />
             Download CV
           </Button>
-        </div>
+        </motion.div>
       </div>
 
       {/* Full-width horizontal line */}

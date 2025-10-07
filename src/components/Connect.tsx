@@ -1,44 +1,66 @@
 import { Container } from "@/components";
 import { Button } from "@/components/ui";
+import {
+  BlueSkyIcon,
+  DiscordIcon,
+  EmailIcon,
+  GitHubIcon,
+  LinkedinIcon,
+  TwitterIcon,
+} from "./Icons";
 
 const Connect = () => {
   const socialHandles = [
     {
       name: "Email Me",
-      path: "/google-gmail.svg",
-      link: "email.com",
-      size: 17,
+      Icon: EmailIcon,
+      link: "mailto:ajayshekhawat.dev@gmail.com",
     },
-    { name: "GitHub", path: "/github.svg", link: "github.com", size: 17 },
-    { name: "LinkedIN", path: "/linkedin.svg", link: "linkedIN.com", size: 17 },
+    {
+      name: "GitHub",
+      Icon: GitHubIcon,
+      link: "https://github.com/meiajayhoon",
+    },
+    {
+      name: "LinkedIN",
+      Icon: LinkedinIcon,
+      link: "https://linkedin.com/in/meiajayhoon",
+    },
+    /*
     {
       name: "Peerlist",
-      path: "/peerlist.webp",
-      link: "peerlist.com",
-      size: 17,
+      Icon: PeerlistIcon,
+      link: "https://peerlist.io/meiajayhoon",
     },
-    { name: "Discord", path: "/discord.svg", link: "Discord.com", size: 17 },
-    { name: "BlueSky", path: "/bluesky.svg", link: "BlueSky.com", size: 17 },
-    { name: "Twitter", path: "/x-light.svg", link: "twitter.com", size: 12 },
+    */
+    {
+      name: "Discord",
+      Icon: DiscordIcon,
+      link: "https://discord.com/users/779936999362920448",
+    },
+    { name: "Twitter", Icon: TwitterIcon, link: "https://x.com/meiajayhoon" },
+    { name: "BlueSky", Icon: BlueSkyIcon, link: "https://x.com/meiajayhoon" },
   ];
   return (
     <Container className="relative max-w-3xl">
-      <div className="mt-5 max-w-lg px-3 pb-6 sm:px-5">
+      <div className="mt-5 max-w-fit px-3 pb-6 sm:px-5">
         <h2 className="text-muted-foreground font-heading mb-5 text-sm">
-          Where to find me (digitally) if you wish to
+          Where to find me (digitally)
         </h2>
         <div>
           <ul className="flex flex-wrap gap-3">
             {socialHandles.map((handle) => (
               <li key={handle.name}>
-                <Button
-                  variant="secondary"
-                  size="sm"
-                  className="hover:ring-accent-foreground cursor-pointer delay-100 hover:ring"
-                >
-                  <img src={handle.path} alt="" width={handle.size} />
-                  {handle.name}
-                </Button>
+                <a href={handle.link} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    variant="secondary"
+                    size="sm"
+                    className="hover:ring-accent-foreground cursor-pointer delay-100 hover:ring"
+                  >
+                    <handle.Icon className="mr-0.5 size-5" />
+                    {handle.name}
+                  </Button>
+                </a>
               </li>
             ))}
           </ul>

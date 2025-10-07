@@ -1,28 +1,50 @@
 import { Container } from "@/components";
 import { Button } from "@/components/ui";
+import {
+  BlueSkyIcon,
+  DiscordIcon,
+  GitHubIcon,
+  LinkedinIcon,
+  TwitterIcon,
+} from "@/components/Icons";
 
 const Footer = () => {
-  const socialHandles = [ 
-    { name: "GitHub", path: "/github.svg", link: "github.com", size: 17 },
-    { name: "LinkedIN", path: "/linkedin.svg", link: "linkedIN.com", size: 17 },
-    { name: "Discord", path: "/discord.svg", link: "Discord.com", size: 17 },
-    { name: "BlueSky", path: "/bluesky.svg", link: "BlueSky.com", size: 17 },
-    { name: "Twitter", path: "/x-light.svg", link: "twitter.com", size: 12 },
+  const socialHandles = [
+    {
+      name: "GitHub",
+      Icon: GitHubIcon,
+      link: "https://github.com/meiajayhoon",
+    },
+    {
+      name: "LinkedIN",
+      Icon: LinkedinIcon,
+      link: "https://linkedin.com/in/meiajayhoon",
+    },
+    {
+      name: "Discord",
+      Icon: DiscordIcon,
+      link: "https://discord.com/users/779936999362920448",
+    },
+    { name: "Twitter", Icon: TwitterIcon, link: "https://x.com/meiajayhoon" },
+    { name: "BlueSky", Icon: BlueSkyIcon, link: "https://bsky.app/profile/meiajayhoon.bsky.social" },
   ];
   return (
     <Container className="relative max-w-3xl">
       <div className="max-w-md mx-auto">
-        <div className=" mb-5">
+        <div className="mb-5">
           <ul className="flex justify-center flex-wrap gap-3">
             {socialHandles.map((handle) => (
               <li key={handle.name}>
-                <Button
-                  variant="secondary"
-                  size="icon"
-                  className="hover:ring-accent-foreground cursor-pointer delay-100 hover:ring"
-                >
-                  <img src={handle.path} alt={handle.name} width={handle.size} />
-                </Button>
+                <a href={handle.link} target="_blank" rel="noopener noreferrer">
+                  <Button
+                    variant="secondary"
+                    size="icon"
+                    className="hover:ring-accent-foreground cursor-pointer delay-100 hover:ring"
+                  >
+                    <handle.Icon className="size-5" />
+                    <span className="sr-only">{handle.name}</span>
+                  </Button>
+                </a>
               </li>
             ))}
           </ul>
