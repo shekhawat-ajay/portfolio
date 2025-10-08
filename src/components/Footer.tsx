@@ -26,13 +26,17 @@ const Footer = () => {
       link: "https://discord.com/users/779936999362920448",
     },
     { name: "Twitter", Icon: TwitterIcon, link: "https://x.com/meiajayhoon" },
-    { name: "BlueSky", Icon: BlueSkyIcon, link: "https://bsky.app/profile/meiajayhoon.bsky.social" },
+    {
+      name: "BlueSky",
+      Icon: BlueSkyIcon,
+      link: "https://bsky.app/profile/meiajayhoon.bsky.social",
+    },
   ];
   return (
     <Container className="relative max-w-3xl">
-      <div className="max-w-md mx-auto">
+      <div className="mx-auto max-w-md">
         <div className="mb-5">
-          <ul className="flex justify-center flex-wrap gap-3">
+          <ul className="flex flex-wrap justify-center gap-3">
             {socialHandles.map((handle) => (
               <li key={handle.name}>
                 <a href={handle.link} target="_blank" rel="noopener noreferrer">
@@ -50,7 +54,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <p className="text-muted-foreground text-balance text-center text-xs font-light mb-10">
+        <p className="text-muted-foreground mb-10 text-center text-xs font-light text-balance">
           © {new Date().getFullYear()} Ajay Shekhawat. All rights reserved
           (even the bugs).
         </p>

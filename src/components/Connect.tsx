@@ -3,7 +3,6 @@ import { Button } from "@/components/ui";
 import {
   BlueSkyIcon,
   DiscordIcon,
-  EmailIcon,
   GitHubIcon,
   LinkedinIcon,
   TwitterIcon,
@@ -11,11 +10,6 @@ import {
 
 const Connect = () => {
   const socialHandles = [
-    {
-      name: "Email Me",
-      Icon: EmailIcon,
-      link: "mailto:ajayshekhawat.dev@gmail.com",
-    },
     {
       name: "GitHub",
       Icon: GitHubIcon,
@@ -26,13 +20,6 @@ const Connect = () => {
       Icon: LinkedinIcon,
       link: "https://linkedin.com/in/meiajayhoon",
     },
-    /*
-    {
-      name: "Peerlist",
-      Icon: PeerlistIcon,
-      link: "https://peerlist.io/meiajayhoon",
-    },
-    */
     {
       name: "Discord",
       Icon: DiscordIcon,
@@ -42,13 +29,13 @@ const Connect = () => {
     { name: "BlueSky", Icon: BlueSkyIcon, link: "https://x.com/meiajayhoon" },
   ];
   return (
-    <Container className="relative max-w-3xl">
-      <div className="mt-5 max-w-fit px-3 pb-6 sm:px-5">
-        <h2 className="text-muted-foreground font-heading mb-5 text-sm">
+    <Container className="relative max-w-xl">
+      <div className="mt-6 px-3 pb-10  sm:px-5">
+        <h2 className="text-muted-foreground font-heading text-sm">
           Where to find me (digitally)
         </h2>
-        <div>
-          <ul className="flex flex-wrap gap-3">
+        <div className="mt-6">
+          <ul className="flex flex-wrap gap-2">
             {socialHandles.map((handle) => (
               <li key={handle.name}>
                 <a href={handle.link} target="_blank" rel="noopener noreferrer">
