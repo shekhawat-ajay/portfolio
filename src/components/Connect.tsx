@@ -6,7 +6,7 @@ import {
   GitHubIcon,
   LinkedinIcon,
   TwitterIcon,
-} from "./Icons";
+} from "@/components/Icons";
 
 const Connect = () => {
   const socialHandles = [
@@ -30,7 +30,7 @@ const Connect = () => {
   ];
   return (
     <Container className="relative max-w-xl">
-      <div className="mt-6 px-3 pb-10  sm:px-5">
+      <div className="mt-6 px-3 pb-10 sm:px-5">
         <h2 className="text-muted-foreground font-heading text-sm">
           Where to find me (digitally)
         </h2>

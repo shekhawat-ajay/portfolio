@@ -18,10 +18,12 @@ const Home = () => {
 
       <Header />
       <About />
-      <Connect />  
-      <Skills />  
+      <Connect />
+      <Skills />
       <Projects />
-      <Footer />
+      <div className="mt-12">
+        <Footer />
+      </div>
     </Container>
   );
 };
