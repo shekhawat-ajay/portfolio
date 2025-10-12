@@ -13,20 +13,24 @@ const Connect = () => {
     {
       name: "GitHub",
       Icon: GitHubIcon,
-      link: "https://github.com/meiajayhoon",
+      link: "https://github.com/shekhawat-ajay",
     },
     {
       name: "LinkedIN",
       Icon: LinkedinIcon,
-      link: "https://linkedin.com/in/meiajayhoon",
+      link: "#",
     },
     {
       name: "Discord",
       Icon: DiscordIcon,
-      link: "https://discord.com/users/779936999362920448",
+      link: "#",
     },
     { name: "Twitter", Icon: TwitterIcon, link: "https://x.com/meiajayhoon" },
-    { name: "BlueSky", Icon: BlueSkyIcon, link: "https://x.com/meiajayhoon" },
+    {
+      name: "BlueSky",
+      Icon: BlueSkyIcon,
+      link: "https://bsky.app/profile/ajayshekhawat.bsky.social",
+    },
   ];
   return (
     <Container className="relative max-w-xl">
