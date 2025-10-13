@@ -11,7 +11,6 @@ const Projects = () => {
           <div></div>
         </div>
       </div>
-      <div className="pointer-events-none absolute bottom-0 left-1/2 h-px w-screen -translate-x-1/2 bg-gradient-to-r from-slate-400/5 via-slate-500/30 to-slate-400/5" />
     </Container>
   );
 };

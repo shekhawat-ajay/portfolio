@@ -2,7 +2,7 @@ import { Footer } from "@/components";
 import Container from "@/components/Container";
 import GetInTouch from "@/components/GetInTouch";
 import Header from "@/components/Header";
-import { Toaster } from "@/components/ui/sonner";
+import { Toaster, Separator } from "@/components/ui";
 
 const Contact = () => {
   return (
@@ -15,10 +15,12 @@ const Contact = () => {
       </div>
 
       <Header />
-        <GetInTouch />
-      <div className="mt-12">
-        <Footer />
-      </div>
+      <Separator className="mb-10 bg-gradient-to-r from-slate-400/15 via-slate-500/40 to-slate-400/15" />
+      <GetInTouch />
+      <Separator className="mb-10 bg-gradient-to-r from-slate-400/5 via-slate-500/30 to-slate-400/5" />
+
+      <Footer />
+
       <Toaster richColors />
     </Container>
   );

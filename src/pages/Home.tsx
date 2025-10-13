@@ -5,6 +5,7 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Container from "@/components/Container";
 import Footer from "@/components/Footer";
+import { Separator } from "@/components/ui";
 
 const Home = () => {
   return (
@@ -17,10 +18,15 @@ const Home = () => {
       </div>
 
       <Header />
+      <Separator className="mb- bg-gradient-to-r from-slate-400/15 via-slate-500/40 to-slate-400/15" />
       <About />
+      <Separator className="mb-10 bg-gradient-to-r from-slate-400/5 via-slate-500/30 to-slate-400/5" />
       <Connect />
+      <Separator className="bg-gradient-to-r from-slate-400/5 via-slate-500/30 to-slate-400/5" />
       <Skills />
+      <Separator className="bg-gradient-to-r from-slate-400/5 via-slate-500/30 to-slate-400/5" />
       <Projects />
+      <Separator className="bg-gradient-to-r from-slate-400/5 via-slate-500/30 to-slate-400/5" />
       <div className="mt-12">
         <Footer />
       </div>

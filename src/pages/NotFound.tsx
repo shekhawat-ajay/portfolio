@@ -15,8 +15,9 @@ const NotFound = () => {
       </div>
 
       <Header />
+      <Separator className="mb-10 bg-gradient-to-r from-slate-400/15 via-slate-500/40 to-slate-400/15" />
 
-      <div className="item-center mx-auto mt-20 mb-10 flex h-64 max-w-md flex-col justify-center gap-5 sm:h-96">
+      <div className="item-center mx-auto mt-20 mb-30 flex h-64 max-w-md flex-col justify-center gap-5 sm:h-72">
         <div className="flex items-center justify-center gap-3">
           <h1 className="text-highlight font- text-3xl">404</h1>
           <Separator orientation="vertical" className="" />

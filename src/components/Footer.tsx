@@ -33,7 +33,7 @@ const Footer = () => {
     },
   ];
   return (
-    <Container className="relative max-w-xl">
+    <Container className="max-w-3xl">
       <div className="mx-auto max-w-md">
         <div className="mb-5">
           <ul className="flex flex-wrap justify-center gap-3">
