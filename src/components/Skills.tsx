@@ -1,5 +1,7 @@
 import Container from "./Container";
 import { Badge } from "@/components/ui";
+import { motion } from "motion/react";
+
 
 const Skills = () => {
   const languages = [
@@ -57,7 +59,11 @@ const Skills = () => {
             </h3>
             <ul className="flex flex-wrap gap-2">
               {languages.map((language) => (
-                <li key={language.name}>
+                <motion.li
+                  key={language.name}
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.1, ease: "easeIn", type: "tween" }}
+                >
                   <Badge
                     variant="secondary"
                     className="hover:ring-accent-foreground px-3 py-1.5 delay-100 hover:ring"
@@ -70,7 +76,7 @@ const Skills = () => {
                     />
                     {language.name}
                   </Badge>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>
@@ -81,7 +87,11 @@ const Skills = () => {
             </h3>
             <ul className="flex flex-wrap gap-2">
               {libraries.map((library) => (
-                <li key={library.name}>
+                <motion.li
+                  key={library.name}
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.1, ease: "easeIn", type: "tween" }}
+                >
                   <Badge
                     variant="secondary"
                     className="hover:ring-accent-foreground px-3 py-1.5 delay-100 hover:ring"
@@ -94,7 +104,7 @@ const Skills = () => {
                     />
                     {library.name}
                   </Badge>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>
@@ -105,15 +115,24 @@ const Skills = () => {
             </h3>
             <ul className="flex flex-wrap gap-2">
               {runtime.map((runtime) => (
-                <li key={runtime.name}>
+                <motion.li
+                  key={runtime.name}
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.1, ease: "easeIn", type: "tween" }}
+                >
                   <Badge
                     variant="secondary"
-                    className="hover:ring-accent-foreground py-1.5 px-3 delay-100 hover:ring"
+                    className="hover:ring-accent-foreground px-3 py-1.5 delay-100 hover:ring"
                   >
-                    <img src={runtime.path} alt={`${runtime.name} logo`} width={runtime.size} className="mr-1" />
+                    <img
+                      src={runtime.path}
+                      alt={`${runtime.name} logo`}
+                      width={runtime.size}
+                      className="mr-1"
+                    />
                     {runtime.name}
                   </Badge>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>
@@ -124,15 +143,24 @@ const Skills = () => {
             </h3>
             <ul className="flex flex-wrap gap-2">
               {database.map((database) => (
-                <li key={database.name}>
+                <motion.li
+                  key={database.name}
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.1, ease: "easeIn", type: "tween" }}
+                >
                   <Badge
                     variant="secondary"
-                    className="hover:ring-accent-foreground py-1.5 px-3 delay-100 hover:ring"
+                    className="hover:ring-accent-foreground px-3 py-1.5 delay-100 hover:ring"
                   >
-                    <img src={database.path} alt={`${database.name} logo`} width={database.size} className="mr-1" />
+                    <img
+                      src={database.path}
+                      alt={`${database.name} logo`}
+                      width={database.size}
+                      className="mr-1"
+                    />
                     {database.name}
                   </Badge>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>
@@ -143,15 +171,24 @@ const Skills = () => {
             </h3>
             <ul className="flex flex-wrap gap-2">
               {developerTools.map((tool) => (
-                <li key={tool.name}>
+                <motion.li
+                  key={tool.name}
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.1, ease: "easeIn", type: "tween" }}
+                >
                   <Badge
                     variant="secondary"
-                    className="hover:ring-accent-foreground py-1.5 px-3 delay-100 hover:ring"
+                    className="hover:ring-accent-foreground px-3 py-1.5 delay-100 hover:ring"
                   >
-                    <img src={tool.path} alt="" width={tool.size} className="mr-1" />
+                    <img
+                      src={tool.path}
+                      alt=""
+                      width={tool.size}
+                      className="mr-1"
+                    />
                     {tool.name}
                   </Badge>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>

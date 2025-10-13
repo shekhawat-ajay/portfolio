@@ -7,6 +7,7 @@ import {
   LinkedinIcon,
   TwitterIcon,
 } from "@/components/Icons";
+import { motion } from "motion/react";
 
 const Connect = () => {
   const socialHandles = [
@@ -41,7 +42,11 @@ const Connect = () => {
         <div className="mt-6">
           <ul className="flex flex-wrap gap-2">
             {socialHandles.map((handle) => (
-              <li key={handle.name}>
+              <motion.li
+                key={handle.name}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.1, ease: "easeIn", type: "tween" }}
+              >
                 <a href={handle.link} target="_blank" rel="noopener noreferrer">
                   <Button
                     variant="secondary"
@@ -52,7 +57,7 @@ const Connect = () => {
                     {handle.name}
                   </Button>
                 </a>
-              </li>
+              </motion.li>
             ))}
           </ul>
         </div>

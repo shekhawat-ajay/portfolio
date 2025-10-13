@@ -37,8 +37,8 @@ const About = () => {
         <div className="mt-6 px-3 pb-8 sm:px-5">
           <motion.div
             className="mt-14 mb-8 flex items-center gap-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.5,
               ease: "easeIn",
@@ -56,7 +56,9 @@ const About = () => {
                 Ajay Shekhawat
               </h1>
               <a
-                href="#"
+                href="https://x.com/meiajayhoon"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary text-sm delay-100"
               >
                 @meiajayhoon
@@ -70,7 +72,7 @@ const About = () => {
             animate={{ opacity: 1 }}
             transition={{
               duration: 1,
-              delay: 1,
+              delay: 0.5,
               ease: "easeIn",
               type: "tween",
             }}
@@ -99,13 +101,13 @@ const About = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
-              duration: 1,
+              duration: 0.5,
               delay: 1.5,
               ease: "easeIn",
               type: "tween",
             }}
           >
-            <div className="bg-accent hover:ring-highlight/75 flex items-center gap-2 rounded-md px-3 py-2 delay-100 hover:ring">
+            <motion.div whileHover={{scale: 1.01}} transition={{duration: 0.1, ease: "easeIn", type: "tween" }} className="bg-accent hover:ring-highlight/75 flex items-center gap-2 rounded-md px-3 py-2 delay-100 hover:ring">
               <span className="relative flex size-3">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
                 <span className="bg-highlight relative inline-flex size-3 rounded-full"></span>
@@ -113,7 +115,7 @@ const About = () => {
               <h3 className="text-accent-foreground font-heading text-[13px] font-light tracking-wide">
                 Available for new opportunities
               </h3>
-            </div>
+            </motion.div>
             <Button
               variant="secondary"
               className="hover:ring-accent-foreground cursor-pointer text-[13px] delay-100 hover:ring"
